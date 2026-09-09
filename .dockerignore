@@ -1,0 +1,11 @@
+.git
+.gitignore
+node_modules
+npm-debug.log
+WRITEUP.md
+*.bak
+.env
+.env.local
+scratch
+player-package
+*.tar

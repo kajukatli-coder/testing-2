@@ -81,7 +81,7 @@ function xorHexWithKey(hex, key) {
   return out;
 }
 
-const FLAG = 'BREACH{017_nEVERR_dELetEs}';
+const FLAG = process.env.FLAG || 'BREACH{017_nEVERR_dELetEs}';
 
 // ---------- LAYOUT HELPERS ----------
 function modernLayout(title, bodyHtml, userEmail) {
@@ -398,4 +398,5 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('BLACKSITE archive running on port ' + PORT));
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => console.log(`BLACKSITE archive running on http://${HOST}:${PORT}`));

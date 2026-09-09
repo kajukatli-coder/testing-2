@@ -1,30 +1,55 @@
-# BLACKSITE // INCIDENT-17 — CTF App
+# BLACK SITE // INCIDENT-17 — Web CTF Challenge
 
-## Run
+An abandoned government/security incident management website CTF challenge.
+
+## Quick Start (Local Docker)
+
+### 1. Build and Start Container
+```bash
+docker compose up --build -d
 ```
-npm install
-npm start
+Access the application at **http://localhost:8080**
+
+### 2. Player Login Credentials
+- **Email**: `agent.rivera@blacksite.gov`
+- **Password**: `Recover2019!`
+
+### 3. Check Logs
+```bash
+docker compose logs -f
 ```
-Visit http://localhost:3000
 
-## Player login (give this to competitors separately, not on the login page)
-- email: `agent.rivera@blacksite.gov`
-- password: `Recover2019!`
+### 4. Stop Service
+```bash
+docker compose down
+```
 
-## Deploying for a real event
-This is a stateless Express app — deploy as-is to any Node host (Render, Railway, Fly.io, a VPS, etc).
-Set `PORT` env var if needed. No database required (in-memory data, resets on restart).
-For a multi-team event, either give every team the same shared instance (fine, since there's
-no per-team state beyond session) or spin up one instance per team if you want full isolation.
+### 5. Clean Reset (⚠️ Deletes Containers & Temporary Volumes)
+```bash
+docker compose down -v --remove-orphans
+```
 
-## Structure
-- `server.js` — all routes, data, and the intentional vulnerability
-- `public/css/modern.css` — modern archive UI
-- `public/css/legacy.css` — legacy terminal UI
-- `robots.txt` route — discovery hint pointing at `/legacy`
+---
 
-## The vulnerability (for organizers)
-`/incident/:id` (modern) checks `req.session.user.clearance` before showing restricted
-records. `/legacy/api/records` and `/legacy/api/evidence` only check `requireLogin` —
-they never check clearance. That's the broken access control: same backend data,
-inconsistent authorization between the modern and legacy surfaces.
+## Participant Package Setup (Offline / Image Export)
+
+To export the challenge for offline participant testing:
+
+```bash
+# Build image
+docker compose build
+
+# Save image archive
+docker save blacksite-incident-17:latest -o blacksite-incident-17.tar
+
+# Player startup instructions (on participant machine)
+docker load -i blacksite-incident-17.tar
+docker compose -f docker-compose.player.yml up -d
+```
+
+---
+
+## Challenge Architecture
+- **Stateless Express App**: Node.js app serving modern archive portal and legacy lookup endpoints.
+- **Port**: Listens on `0.0.0.0:3000` inside container, mapped to host port `8080`.
+- **Environment**: Supports `PORT` and `FLAG` environment overrides.

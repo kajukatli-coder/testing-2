@@ -1,0 +1,7 @@
+services:
+  web:
+    image: blacksite-incident-17:latest
+    container_name: blacksite-incident-17-player
+    ports:
+      - "8080:3000"
+    restart: unless-stopped
