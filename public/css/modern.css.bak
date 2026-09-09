@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:#0e1420; color:#d8dee9; }
+.topbar { display:flex; justify-content:space-between; align-items:center; background:#0a0f1a; border-bottom:1px solid #1e2838; padding:14px 28px; }
+.brand { font-weight:700; letter-spacing:1px; color:#e8ecf1; }
+.brand span { font-weight:400; color:#6b7688; margin-left:6px; }
+nav a { color:#8fa3c0; text-decoration:none; margin-left:18px; font-size:14px; }
+nav a:hover { color:#e8ecf1; }
+.user { color:#556274; font-size:13px; margin-left:18px; }
+.content { max-width:900px; margin:40px auto; padding:0 24px; }
+h1 { color:#e8ecf1; font-weight:600; }
+.footer { text-align:center; color:#3a4658; font-size:12px; padding:24px; }
+.loginBox { max-width:360px; margin:80px auto; background:#141c2b; padding:32px; border-radius:6px; border:1px solid #1e2838; }
+.loginBox h1 { font-size:20px; }
+.hint { color:#6b7688; font-size:13px; margin-top:-8px; }
+.loginBox form { display:flex; flex-direction:column; gap:14px; margin-top:20px; }
+.loginBox label { font-size:13px; color:#8fa3c0; display:flex; flex-direction:column; gap:6px; }
+.loginBox input { background:#0e1420; border:1px solid #2a3547; color:#e8ecf1; padding:9px 10px; border-radius:4px; }
+.loginBox button { background:#3468d6; color:#fff; border:none; padding:10px; border-radius:4px; cursor:pointer; font-weight:600; }
+.error { color:#e0665c; font-size:13px; }
+.archiveTable { width:100%; border-collapse:collapse; margin-top:20px; }
+.archiveTable th, .archiveTable td { text-align:left; padding:10px 12px; border-bottom:1px solid #1e2838; font-size:14px; }
+.archiveTable th { color:#6b7688; font-weight:600; font-size:12px; text-transform:uppercase; }
+.archiveTable a { color:#6fa3ff; text-decoration:none; }
+.archiveTable a:hover { text-decoration:underline; }
+.date { color:#6b7688; font-size:13px; }
+.related { color:#8fa3c0; font-size:14px; }
+.related a { color:#e0a35c; }
+form input[type=text] { background:#141c2b; border:1px solid #2a3547; color:#e8ecf1; padding:9px 10px; border-radius:4px; width:280px; }
+form button { background:#3468d6; color:#fff; border:none; padding:9px 16px; border-radius:4px; cursor:pointer; margin-left:8px; }
+.searchResults { margin-top:20px; list-style:none; padding:0; }
+.searchResults li { padding:8px 0; border-bottom:1px solid #1e2838; font-size:14px; }
+.searchResults a { color:#6fa3ff; text-decoration:none; }

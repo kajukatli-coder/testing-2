@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+  margin: 0;
+  background: #0c0c0c;
+  color: #c9c9a3;
+  font-family: 'VT323', 'Courier New', monospace;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%), linear-gradient(90deg, rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 255, 0, 0.02));
+  z-index: 999;
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+.legacyHeader td {
+  background: #1a1a1a;
+  color: #e0c05c;
+  padding: 8px 12px;
+  border-bottom: 2px solid #3a3a2a;
+}
+
+.legacyTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.legacy-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #e0c05c;
+  vertical-align: middle;
+}
+
+.legacyMeta {
+  text-align: right;
+  color: #6a6a4a;
+  font-size: 16px;
+}
+
+.statusBar td {
+  background: #111111;
+  padding: 6px 12px;
+  border-bottom: 1px solid #2a2a1a;
+  font-size: 16px;
+}
+
+.ok { color: #7fbf6a; }
+.warn { color: #d99a2b; }
+.unk { color: #c9532b; }
+
+.legacyBody {
+  max-width: 680px;
+  margin: 28px auto;
+  padding: 0 18px;
+}
+
+.legacyBody h2 {
+  color: #e0c05c;
+  border-bottom: 1px dashed #3a3a2a;
+  padding-bottom: 4px;
+  font-size: 24px;
+}
+
+.legacyBody a {
+  color: #7fa3bf;
+}
+
+.legacyBody form {
+  margin: 14px 0;
+}
+
+.legacyBody input[type=text] {
+  background: #000;
+  color: #c9c9a3;
+  border: 1px solid #3a3a2a;
+  padding: 8px;
+  width: 240px;
+  font-family: inherit;
+  font-size: 18px;
+}
+
+.legacyBody button {
+  background: #2a2a1a;
+  color: #e0c05c;
+  border: 1px solid #3a3a2a;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.legacyBody button:hover {
+  background: #3a3a2a;
+  color: #fff;
+}
+
+.legacyBody pre {
+  background: #000000;
+  border: 1px solid #2a2a1a;
+  padding: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #7fbf6a;
+}
+
+.legacyFooter {
+  text-align: center;
+  color: #5a5a3a;
+  font-size: 14px;
+  padding: 24px;
+}
